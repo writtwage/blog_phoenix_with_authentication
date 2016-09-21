@@ -17,7 +17,7 @@ defmodule Blog.User do
     |> cast(params, [:email, :crypted_password])
     |> unique_constraint(:email) # validates uniqueness of email
     |> validate_format(:email, ~r/@/) #check that it has an @
-    |> validate_required([:email, :password])
+    |> validate_required(["email", "password"])
     |> unique_constraint(:email)
   end
 end
